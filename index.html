@@ -62,7 +62,7 @@ h1 {
 .live {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .live span {
@@ -71,11 +71,21 @@ h1 {
     margin-right: 7px;
 }
 
+/* REPRODUCTOR */
 .radio-player {
     width: 100%;
     min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Evita que los enlaces de Caster queden visibles */
+.radio-player > a {
+    display: none !important;
+}
+
+/* BOTONES */
 .buttons {
     display: flex;
     flex-direction: column;
@@ -93,10 +103,15 @@ h1 {
     font-size: 17px;
     font-weight: bold;
     transition: 0.2s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
 }
 
 .button:hover {
     transform: scale(1.02);
+}
+
+.button:active {
+    transform: scale(0.98);
 }
 
 .phone {
@@ -120,7 +135,12 @@ h1 {
     opacity: 0.8;
 }
 
+/* CELULARES */
 @media (max-width: 500px) {
+
+    body {
+        padding: 18px 10px;
+    }
 
     h1 {
         font-size: 27px;
@@ -131,8 +151,23 @@ h1 {
         height: 125px;
     }
 
+    .frequency {
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+
     .player-box {
-        padding: 20px 10px;
+        padding: 20px 8px;
+        border-radius: 20px;
+    }
+
+    .button {
+        padding: 15px 10px;
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 14px;
     }
 }
 </style>
@@ -142,31 +177,35 @@ h1 {
 
 <div class="container">
 
+    <!-- LOGO -->
     <img
         class="logo"
         src="logo%20radio%20correcto.png"
         alt="Misión Buenas Nuevas"
     >
 
+    <!-- NOMBRE -->
     <h1>Misión Buenas Nuevas</h1>
 
+    <!-- FRECUENCIA -->
     <div class="frequency">
         📻 105.5 FM
     </div>
 
+    <!-- REPRODUCTOR -->
     <div class="player-box">
 
         <div class="live">
             <span>🔴</span> RADIO EN VIVO
         </div>
 
-        <!-- REPRODUCTOR OFICIAL DE LA RADIO -->
+        <!-- REPRODUCTOR OFICIAL CASTER.FM -->
         <div
             class="cstrEmbed radio-player"
             data-type="newStreamPlayer"
             data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
-            data-theme="light"
-            data-color="6C2BDD"
+            data-theme="dark"
+            data-color="1769d1"
             data-channelId=""
             data-rendered="false"
         >
@@ -177,12 +216,14 @@ h1 {
 
     </div>
 
+    <!-- BOTONES -->
     <div class="buttons">
 
         <a
             class="button"
             href="https://misionbuenasnuevas1055.ismyradio.com/"
             target="_blank"
+            rel="noopener"
         >
             🌐 Escuchar por Internet
         </a>
@@ -198,17 +239,19 @@ h1 {
             class="button whatsapp"
             href="https://wa.me/59891914830"
             target="_blank"
+            rel="noopener"
         >
             💬 WhatsApp
         </a>
 
     </div>
 
+    <!-- DESCRIPCIÓN -->
     <div class="description">
 
-        <strong>Radio Misión Buenas Nuevas FM 105.5</strong> es una
-        emisora cristiana comprometida con llevar el mensaje del
-        Evangelio de Jesucristo a cada hogar.
+        <strong>Radio Misión Buenas Nuevas FM 105.5</strong>
+        es una emisora cristiana comprometida con llevar el mensaje
+        del Evangelio de Jesucristo a cada hogar.
 
         <br><br>
 
@@ -219,6 +262,7 @@ h1 {
 
     </div>
 
+    <!-- PIE -->
     <div class="footer">
         Misión Buenas Nuevas 105.5 FM
     </div>
