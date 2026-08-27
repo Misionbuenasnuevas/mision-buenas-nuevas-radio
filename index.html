@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1f3a">
+
+  <title>Misión Buenas Nuevas 105.5 FM</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(160deg, #07152b, #123b68);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 430px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      background: white;
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .frequency {
+      font-size: 20px;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .player {
+      background: rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 25px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .live {
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .play {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      border: none;
+      background: white;
+      color: #123b68;
+      font-size: 35px;
+      cursor: pointer;
+      margin-bottom: 18px;
+    }
+
+    .status {
+      font-size: 14px;
+      min-height: 20px;
+    }
+
+    .buttons {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.15);
+      font-size: 17px;
+    }
+
+    .button:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 13px;
+      opacity: 0.75;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="app">
+
+    <img
+      class="logo"
+      src="https://misionbuenasnuevas1055.ismyradio.com/favicon.ico"
+      alt="Misión Buenas Nuevas">
+
+    <h1>Misión Buenas Nuevas</h1>
+
+    <div class="frequency">
+      📻 105.5 FM
+    </div>
+
+    <section class="player">
+
+      <div class="live">
+        🔴 RADIO EN VIVO
+      </div>
+
+      <button class="play" onclick="abrirRadio()">
+        ▶
+      </button>
+
+      <div class="status" id="status">
+        Presioná Play para escuchar
+      </div>
+
+    </section>
+
+    <div class="buttons">
+
+      <a
+        class="button"
+        href="https://misionbuenasnuevas1055.ismyradio.com/"
+        target="_blank">
+        🌐 Escuchar por Internet
+      </a>
+
+      <a
+        class="button"
+        href="tel:091914830">
+        📞 Llamar: 091 914 830
+      </a>
+
+      <a
+        class="button"
+        href="https://wa.me/59891914830"
+        target="_blank">
+        💬 WhatsApp
+      </a>
+
+    </div>
+
+    <div class="footer">
+      Misión Buenas Nuevas 105.5 FM
+    </div>
+
+  </main>
+
+  <script>
+    function abrirRadio() {
+      document.getElementById("status").innerText =
+        "Abriendo la radio en vivo...";
+
+      window.open(
+        "https://misionbuenasnuevas1055.ismyradio.com/",
+        "_blank"
+      );
+    }
+  </script>
+
+</body>
+</html>
