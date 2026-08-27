@@ -1,186 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b1f3a">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07152e">
 
-  <title>Misión Buenas Nuevas 105.5 FM</title>
+<title>Misión Buenas Nuevas 105.5 FM</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      background: linear-gradient(160deg, #07152b, #123b68);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(160deg, #07152e, #123b68, #07152e);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+}
 
-    .app {
-      width: 100%;
-      max-width: 430px;
-      text-align: center;
+.container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.frequency {
+    font-size: 20px;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.player-box {
+    background: rgba(255,255,255,0.10);
+    border-radius: 25px;
+    padding: 25px 15px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+}
+
+.live {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.live span {
+    color: #ff3030;
+    font-size: 16px;
+    margin-right: 7px;
+}
+
+.radio-player {
+    width: 100%;
+    min-height: 100px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.button {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, #1769d1, #248cff);
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.button:hover {
+    transform: scale(1.02);
+}
+
+.phone {
+    background: linear-gradient(90deg, #168a45, #20b85d);
+}
+
+.whatsapp {
+    background: linear-gradient(90deg, #159447, #25d366);
+}
+
+.description {
+    margin-top: 25px;
+    line-height: 1.6;
+    font-size: 15px;
+    opacity: 0.95;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+@media (max-width: 500px) {
+
+    h1 {
+        font-size: 27px;
     }
 
     .logo {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      background: white;
-      padding: 10px;
+        width: 125px;
+        height: 125px;
     }
 
-    h1 {
-      font-size: 27px;
-      margin-bottom: 8px;
+    .player-box {
+        padding: 20px 10px;
     }
-
-    .frequency {
-      font-size: 20px;
-      margin-bottom: 25px;
-      opacity: 0.9;
-    }
-
-    .player {
-      background: rgba(255,255,255,0.12);
-      border-radius: 22px;
-      padding: 25px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    .live {
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
-
-    .play {
-      width: 85px;
-      height: 85px;
-      border-radius: 50%;
-      border: none;
-      background: white;
-      color: #123b68;
-      font-size: 35px;
-      cursor: pointer;
-      margin-bottom: 18px;
-    }
-
-    .status {
-      font-size: 14px;
-      min-height: 20px;
-    }
-
-    .buttons {
-      display: grid;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .button {
-      display: block;
-      text-decoration: none;
-      color: white;
-      padding: 15px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.15);
-      font-size: 17px;
-    }
-
-    .button:hover {
-      background: rgba(255,255,255,0.25);
-    }
-
-    .footer {
-      margin-top: 25px;
-      font-size: 13px;
-      opacity: 0.75;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <main class="app">
+<div class="container">
 
     <img
-      class="logo"
-      src="logo%20radio%20correcto.png"
-      alt="Misión Buenas Nuevas">
+        class="logo"
+        src="logo%20radio%20correcto.png"
+        alt="Misión Buenas Nuevas"
+    >
 
     <h1>Misión Buenas Nuevas</h1>
 
     <div class="frequency">
-      📻 105.5 FM
+        📻 105.5 FM
     </div>
 
-    <section class="player">
+    <div class="player-box">
 
-      <div class="live">
-        🔴 RADIO EN VIVO
-      </div>
+        <div class="live">
+            <span>🔴</span> RADIO EN VIVO
+        </div>
 
-      <button class="play" onclick="abrirRadio()">
-        ▶
-      </button>
+        <!-- REPRODUCTOR OFICIAL DE LA RADIO -->
+        <div
+            class="cstrEmbed radio-player"
+            data-type="newStreamPlayer"
+            data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
+            data-theme="light"
+            data-color="6C2BDD"
+            data-channelId=""
+            data-rendered="false"
+        >
+            <a href="https://www.caster.fm">Shoutcast Hosting</a>
+            <a href="https://www.caster.fm">Stream Hosting</a>
+            <a href="https://www.caster.fm">Radio Server Hosting</a>
+        </div>
 
-      <div class="status" id="status">
-        Presioná Play para escuchar
-      </div>
-
-    </section>
+    </div>
 
     <div class="buttons">
 
-      <a
-        class="button"
-        href="https://misionbuenasnuevas1055.ismyradio.com/"
-        target="_blank">
-        🌐 Escuchar por Internet
-      </a>
+        <a
+            class="button"
+            href="https://misionbuenasnuevas1055.ismyradio.com/"
+            target="_blank"
+        >
+            🌐 Escuchar por Internet
+        </a>
 
-      <a
-    class="button"
-    href="tel:+59891914830">
-    📞 Llamar: 091 914 830
-</a>
-      <a
-    class="button"
-    href="https://wa.me/59891914830"
-    target="_blank">
-    💬 WhatsApp
-</a>
+        <a
+            class="button phone"
+            href="tel:+59891914830"
+        >
+            📞 Llamar: 091 914 830
+        </a>
+
+        <a
+            class="button whatsapp"
+            href="https://wa.me/59891914830"
+            target="_blank"
+        >
+            💬 WhatsApp
+        </a>
+
+    </div>
+
+    <div class="description">
+
+        <strong>Radio Misión Buenas Nuevas FM 105.5</strong> es una
+        emisora cristiana comprometida con llevar el mensaje del
+        Evangelio de Jesucristo a cada hogar.
+
+        <br><br>
+
+        Desde Montevideo, Uruguay, transmitimos una programación
+        centrada en la esperanza, la fe y la gracia de Dios,
+        con enseñanza bíblica, música cristiana, testimonios
+        y espacios de reflexión para toda la familia.
 
     </div>
 
     <div class="footer">
-      Misión Buenas Nuevas 105.5 FM
+        Misión Buenas Nuevas 105.5 FM
     </div>
 
-  </main>
+</div>
 
-  <script>
-    function abrirRadio() {
-      document.getElementById("status").innerText =
-        "Abriendo la radio en vivo...";
-
-      window.open(
-        "https://misionbuenasnuevas1055.ismyradio.com/",
-        "_blank"
-      );
-    }
-  </script>
+<!-- CARGA DEL REPRODUCTOR CASTER.FM -->
+<script src="https://cdn.cloud.caster.fm//widgets/embed.js"></script>
 
 </body>
 </html>
