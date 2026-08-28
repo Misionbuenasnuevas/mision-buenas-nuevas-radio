@@ -13,6 +13,8 @@
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
+<meta name="apple-touch-fullscreen" content="yes">
+
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <link rel="manifest" href="manifest.json">
@@ -42,14 +44,19 @@
 }
 
 html {
+    width: 100%;
     min-height: 100%;
 }
 
 body {
 
-    font-family: Arial, Helvetica, sans-serif;
-
+    width: 100%;
     min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     background:
         linear-gradient(
@@ -59,15 +66,10 @@ body {
             #07152e 100%
         );
 
-    color: white;
+    color: #ffffff;
 
-    display: flex;
-
-    justify-content: center;
-
-    align-items: flex-start;
-
-    padding: 25px 10px 35px;
+    padding:
+        20px 10px 35px;
 }
 
 .container {
@@ -75,6 +77,9 @@ body {
     width: 100%;
 
     max-width: 650px;
+
+    margin:
+        0 auto;
 
     text-align: center;
 }
@@ -86,6 +91,8 @@ body {
 
 .logo {
 
+    display: block;
+
     width: 145px;
 
     height: 145px;
@@ -94,10 +101,12 @@ body {
 
     border-radius: 50%;
 
-    margin-bottom: 12px;
+    margin:
+        0 auto 12px;
 
     box-shadow:
-        0 0 25px rgba(255,255,255,0.25);
+        0 0 25px
+        rgba(255,255,255,0.25);
 }
 
 
@@ -123,7 +132,7 @@ h1 {
 
 
 /* =========================
-   CAJA DEL REPRODUCTOR
+   CAJA RADIO
 ========================= */
 
 .player-box {
@@ -135,14 +144,18 @@ h1 {
 
     border-radius: 25px;
 
-    padding: 22px 10px;
+    padding:
+        22px 10px;
 
     box-shadow:
-        0 10px 35px rgba(0,0,0,0.35);
+        0 10px 35px
+        rgba(0,0,0,0.35);
 
-    backdrop-filter: blur(8px);
+    backdrop-filter:
+        blur(8px);
 
-    -webkit-backdrop-filter: blur(8px);
+    -webkit-backdrop-filter:
+        blur(8px);
 }
 
 .live {
@@ -156,7 +169,7 @@ h1 {
 
 
 /* =========================
-   REPRODUCTOR CASTER.FM
+   CASTER
 ========================= */
 
 .radio-player {
@@ -170,10 +183,34 @@ h1 {
 
 
 /* =========================
+   ENLACES CASTER
+   LOS DEJAMOS OCULTOS
+   VISUALMENTE
+========================= */
+
+.radio-player > a {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    overflow: hidden;
+
+    clip: rect(0,0,0,0);
+
+    white-space: nowrap;
+}
+
+
+/* =========================
    BOTONES
 ========================= */
 
 .buttons {
+
+    width: 100%;
 
     display: flex;
 
@@ -190,11 +227,12 @@ h1 {
 
     width: 100%;
 
-    text-decoration: none;
-
     color: white;
 
-    padding: 17px 12px;
+    text-decoration: none;
+
+    padding:
+        17px 12px;
 
     border-radius: 15px;
 
@@ -203,28 +241,22 @@ h1 {
     font-weight: bold;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,0.20);
+        0 5px 15px
+        rgba(0,0,0,0.20);
 
     transition:
-        transform 0.15s ease,
-        opacity 0.15s ease;
-}
-
-.button:hover {
-
-    transform: scale(1.02);
+        transform 0.15s ease;
 }
 
 .button:active {
 
-    transform: scale(0.98);
-
-    opacity: 0.85;
+    transform:
+        scale(0.98);
 }
 
 
 /* =========================
-   LLAMAR
+   TELEFONO
 ========================= */
 
 .phone {
@@ -285,7 +317,7 @@ h1 {
 
 
 /* =========================
-   DESCRIPCIÓN
+   DESCRIPCION
 ========================= */
 
 .description {
@@ -365,22 +397,17 @@ h1 {
 
         font-size: 16px;
 
-        padding: 16px 10px;
+        padding:
+            16px 10px;
     }
-
 }
 
 
 /* =========================
-   CELULARES MUY PEQUEÑOS
+   CELULARES PEQUEÑOS
 ========================= */
 
 @media (max-width: 360px) {
-
-    h1 {
-
-        font-size: 24px;
-    }
 
     .logo {
 
@@ -389,9 +416,9 @@ h1 {
         height: 115px;
     }
 
-    .player-box {
+    h1 {
 
-        border-radius: 20px;
+        font-size: 24px;
     }
 
 }
@@ -433,20 +460,20 @@ h1 {
 
 
 <!-- =========================
-     RADIO EN VIVO
+     REPRODUCTOR
 ========================= -->
 
 <div class="player-box">
+
 
     <div class="live">
         🔴 RADIO EN VIVO
     </div>
 
 
-    <!-- =========================
-         CASTER.FM
-         NO BORRAR LOS 3 ENLACES
-    ========================= -->
+    <!-- =================================
+         CASTER.FM - CODIGO OFICIAL
+    ================================== -->
 
     <div
         class="cstrEmbed radio-player"
@@ -472,6 +499,7 @@ h1 {
 
     </div>
 
+
 </div>
 
 
@@ -482,7 +510,7 @@ h1 {
 <div class="buttons">
 
 
-    <!-- LLAMAR -->
+    <!-- TELEFONO -->
 
     <a
         class="button phone"
@@ -532,7 +560,7 @@ h1 {
 
 
 <!-- =========================
-     DESCRIPCIÓN
+     DESCRIPCION
 ========================= -->
 
 <div class="description">
@@ -556,6 +584,10 @@ h1 {
 </div>
 
 
+<!-- =========================
+     PIE
+========================= -->
+
 <div class="footer">
 
     Misión Buenas Nuevas 105.5 FM
@@ -566,12 +598,12 @@ h1 {
 </div>
 
 
-<!-- =========================
-     SCRIPT OFICIAL CASTER.FM
-========================= -->
+<!-- =================================
+     SCRIPT CASTER.FM
+================================== -->
 
 <script
-    src="https://cdn.cloud.caster.fm/widgets/embed.js">
+    src="//cdn.cloud.caster.fm//widgets/embed.js">
 </script>
 
 
