@@ -17,11 +17,10 @@
 <meta name="apple-mobile-web-app-capable"
       content="yes">
 
-<meta name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent">
+<meta name="apple-touch-fullscreen"
+      content="yes">
 
-<link rel="manifest"
-      href="manifest.json">
+<link rel="manifest" href="manifest.json">
 
 <link rel="icon"
       type="image/png"
@@ -118,7 +117,7 @@ h1 {
 
     border-radius: 25px;
 
-    padding: 22px 10px;
+    padding: 25px 15px;
 
     box-shadow:
         0 10px 35px rgba(0,0,0,0.35);
@@ -128,11 +127,11 @@ h1 {
 
 .live {
 
-    font-size: 20px;
+    font-size: 21px;
 
     font-weight: bold;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 
@@ -144,7 +143,61 @@ h1 {
 
     width: 100%;
 
-    min-height: 100px;
+    padding: 10px;
+}
+
+.play-button {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 18px 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #159447,
+            #25d366
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.30);
+
+    transition: 0.2s;
+}
+
+.play-button:active {
+
+    transform: scale(0.97);
+}
+
+.status {
+
+    margin-top: 14px;
+
+    font-size: 15px;
+
+    opacity: 0.9;
+
+    min-height: 22px;
+}
+
+audio {
+
+    width: 100%;
+
+    margin-top: 15px;
 }
 
 
@@ -185,9 +238,9 @@ h1 {
     transition: 0.2s;
 }
 
-.button:hover {
+.button:active {
 
-    transform: scale(1.02);
+    transform: scale(0.97);
 }
 
 
@@ -276,8 +329,7 @@ h1 {
 
     body {
 
-        padding:
-            15px 8px;
+        padding: 15px 8px;
     }
 
     .logo {
@@ -299,8 +351,7 @@ h1 {
 
     .player-box {
 
-        padding:
-            20px 7px;
+        padding: 20px 7px;
     }
 
     .button {
@@ -357,41 +408,45 @@ Misión Buenas Nuevas
 
 <div class="live">
 
-<span>🔴</span>
-
-RADIO EN VIVO
+🔴 RADIO EN VIVO
 
 </div>
 
 
+<div class="radio-player">
+
+
 <!-- ================================================= -->
-<!-- CASTER.FM - CÓDIGO OFICIAL DE TU RADIO -->
+<!-- REPRODUCTOR DIRECTO -->
 <!-- ================================================= -->
 
-<div
-    class="cstrEmbed radio-player"
-    data-type="newStreamPlayer"
-    data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
-    data-theme="light"
-    data-color="6C2BDD"
-    data-channelId=""
-    data-rendered="false"
+<button
+    class="play-button"
+    id="playButton"
+    onclick="toggleRadio()"
 >
 
+▶️ REPRODUCIR RADIO
 
-<!-- NO BORRAR ESTOS ENLACES -->
+</button>
 
-<a href="https://www.caster.fm">
-Shoutcast Hosting
-</a>
 
-<a href="https://www.caster.fm">
-Stream Hosting
-</a>
+<div
+    class="status"
+    id="status"
+>
 
-<a href="https://www.caster.fm">
-Radio Server Hosting
-</a>
+Presiona el botón para escuchar en vivo
+
+</div>
+
+
+<audio
+    id="radio"
+    preload="none"
+    controls
+>
+</audio>
 
 
 </div>
@@ -504,11 +559,121 @@ Misión Buenas Nuevas 105.5 FM
 
 
 <!-- ================================================= -->
-<!-- SCRIPT OFICIAL CASTER.FM -->
+<!-- JAVASCRIPT DEL REPRODUCTOR -->
 <!-- ================================================= -->
 
-<script
-src="//cdn.cloud.caster.fm//widgets/embed.js">
+<script>
+
+/*
+=========================================================
+IMPORTANTE
+
+AQUÍ DEBEMOS COLOCAR LA URL DIRECTA DEL STREAM.
+
+NO PONGAS AQUÍ LA PÁGINA:
+https://misionbuenasnuevas1055.ismyradio.com/
+
+NECESITAMOS LA DIRECCIÓN DEL AUDIO/STREAM.
+=========================================================
+*/
+
+const STREAM_URL = "PEGAR_AQUI_URL_DIRECTA_DEL_STREAM";
+
+
+const radio =
+    document.getElementById("radio");
+
+const playButton =
+    document.getElementById("playButton");
+
+const status =
+    document.getElementById("status");
+
+
+radio.src = STREAM_URL;
+
+
+async function toggleRadio() {
+
+    if (!STREAM_URL ||
+        STREAM_URL ===
+        "PEGAR_AQUI_URL_DIRECTA_DEL_STREAM") {
+
+        status.innerText =
+            "⚠️ Falta configurar la transmisión de la radio.";
+
+        return;
+    }
+
+
+    if (radio.paused) {
+
+        try {
+
+            await radio.play();
+
+            playButton.innerText =
+                "⏸️ PAUSAR RADIO";
+
+            status.innerText =
+                "🟢 RADIO EN VIVO";
+
+        }
+
+        catch (error) {
+
+            status.innerText =
+                "⚠️ No se pudo iniciar la transmisión.";
+
+            console.log(error);
+
+        }
+
+    }
+
+    else {
+
+        radio.pause();
+
+        playButton.innerText =
+            "▶️ REPRODUCIR RADIO";
+
+        status.innerText =
+            "Radio pausada";
+
+    }
+
+}
+
+
+/* Cuando comienza la transmisión */
+
+radio.addEventListener(
+    "playing",
+    function() {
+
+        playButton.innerText =
+            "⏸️ PAUSAR RADIO";
+
+        status.innerText =
+            "🟢 RADIO EN VIVO";
+
+    }
+);
+
+
+/* Si se corta */
+
+radio.addEventListener(
+    "error",
+    function() {
+
+        status.innerText =
+            "⚠️ No se pudo conectar con la radio.";
+
+    }
+);
+
 </script>
 
 
