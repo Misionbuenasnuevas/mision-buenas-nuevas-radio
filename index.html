@@ -135,35 +135,10 @@ h1 {
     margin-bottom: 18px;
 }
 
-.station {
 
-    background:
-        rgba(0,0,0,0.22);
-
-    border-radius: 14px;
-
-    padding: 12px;
-
-    margin-bottom: 15px;
-}
-
-.station strong {
-
-    display: block;
-
-    font-size: 18px;
-}
-
-.station small {
-
-    display: block;
-
-    margin-top: 5px;
-
-    opacity: 0.85;
-
-    font-size: 14px;
-}
+/* ========================= */
+/* REPRODUCTOR */
+/* ========================= */
 
 .radio-player {
 
@@ -171,6 +146,11 @@ h1 {
 
     min-height: 100px;
 }
+
+
+/* ========================= */
+/* BOTONES */
+/* ========================= */
 
 .buttons {
 
@@ -201,7 +181,17 @@ h1 {
 
     box-shadow:
         0 5px 15px rgba(0,0,0,0.20);
+
+    transition: 0.2s;
 }
+
+.button:hover {
+
+    transform: scale(1.02);
+}
+
+
+/* LLAMAR */
 
 .phone {
 
@@ -213,6 +203,9 @@ h1 {
         );
 }
 
+
+/* WHATSAPP */
+
 .whatsapp {
 
     background:
@@ -222,6 +215,9 @@ h1 {
             #25d366
         );
 }
+
+
+/* FACEBOOK */
 
 .facebook {
 
@@ -233,6 +229,9 @@ h1 {
         );
 }
 
+
+/* INSTAGRAM */
+
 .instagram {
 
     background:
@@ -243,6 +242,7 @@ h1 {
             #f77737
         );
 }
+
 
 .description {
 
@@ -269,30 +269,42 @@ h1 {
     opacity: 0.75;
 }
 
+
+/* CELULARES */
+
 @media (max-width: 500px) {
 
     body {
-        padding: 15px 8px;
+
+        padding:
+            15px 8px;
     }
 
     .logo {
+
         width: 125px;
+
         height: 125px;
     }
 
     h1 {
+
         font-size: 27px;
     }
 
     .frequency {
+
         font-size: 19px;
     }
 
     .player-box {
-        padding: 20px 7px;
+
+        padding:
+            20px 7px;
     }
 
     .button {
+
         font-size: 16px;
     }
 
@@ -305,10 +317,13 @@ h1 {
 
 <body>
 
+
 <div class="container">
 
 
+<!-- ========================= -->
 <!-- LOGO -->
+<!-- ========================= -->
 
 <img
     class="logo"
@@ -317,18 +332,24 @@ h1 {
 >
 
 
+<!-- ========================= -->
+<!-- TITULO -->
+<!-- ========================= -->
+
 <h1>
 Misión Buenas Nuevas
 </h1>
 
 
 <div class="frequency">
+
 📻 105.5 FM
+
 </div>
 
 
 <!-- ========================= -->
-<!-- REPRODUCTOR DE LA RADIO -->
+<!-- RADIO EN VIVO -->
 <!-- ========================= -->
 
 <div class="player-box">
@@ -343,39 +364,22 @@ RADIO EN VIVO
 </div>
 
 
-<div class="station">
-
-<strong>
-📻 Misión Buenas Nuevas FM 105.5
-</strong>
-
-<small>
-Montevideo, Uruguay · Radio Cristiana
-</small>
-
-</div>
-
-
-<!-- CASTER.FM -->
+<!-- ================================================= -->
+<!-- CASTER.FM - CÓDIGO OFICIAL DE TU RADIO -->
+<!-- ================================================= -->
 
 <div
     class="cstrEmbed radio-player"
-
-    data-type="streamPlayer"
-
+    data-type="newStreamPlayer"
     data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
-
     data-theme="light"
-
     data-color="6C2BDD"
-
     data-channelId=""
-
     data-rendered="false"
 >
 
 
-<!-- NO BORRAR ESTOS TRES ENLACES -->
+<!-- NO BORRAR ESTOS ENLACES -->
 
 <a href="https://www.caster.fm">
 Shoutcast Hosting
@@ -421,7 +425,7 @@ Radio Server Hosting
     class="button whatsapp"
     href="https://wa.me/59891914830"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
 >
 
 💬 WhatsApp
@@ -435,7 +439,7 @@ Radio Server Hosting
     class="button facebook"
     href="https://www.facebook.com/share/14k15WaUNVn/"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
 >
 
 👍 Facebook · Iglesia de Uruguay
@@ -449,7 +453,7 @@ Radio Server Hosting
     class="button instagram"
     href="https://www.instagram.com/imbn_uy?igsi=MTJsdmg3dnp0a3hjMg=="
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
 >
 
 📸 Instagram · Iglesia de Uruguay
@@ -466,6 +470,7 @@ Radio Server Hosting
 
 <div class="description">
 
+
 <strong>
 Radio Misión Buenas Nuevas FM 105.5
 </strong>
@@ -474,13 +479,16 @@ es una emisora cristiana comprometida
 con llevar el mensaje del Evangelio de
 Jesucristo a cada hogar.
 
+
 <br><br>
+
 
 Desde Montevideo, Uruguay, transmitimos
 una programación centrada en la esperanza,
 la fe y la gracia de Dios, con enseñanza
 bíblica, música cristiana, testimonios
 y espacios de reflexión para toda la familia.
+
 
 </div>
 
@@ -495,12 +503,12 @@ Misión Buenas Nuevas 105.5 FM
 </div>
 
 
-<!-- ========================= -->
-<!-- SCRIPT CASTER.FM -->
-<!-- ========================= -->
+<!-- ================================================= -->
+<!-- SCRIPT OFICIAL CASTER.FM -->
+<!-- ================================================= -->
 
 <script
-src="https://cdn.cloud.caster.fm/widgets/embed.js">
+src="//cdn.cloud.caster.fm//widgets/embed.js">
 </script>
 
 
