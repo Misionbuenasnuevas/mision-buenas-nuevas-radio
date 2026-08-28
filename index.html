@@ -1,24 +1,501 @@
-{
-  "name": "Misión Buenas Nuevas FM 105.5",
-  "short_name": "Misión 105.5",
-  "description": "Radio Misión Buenas Nuevas FM 105.5 - Montevideo, Uruguay",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#07152e",
-  "theme_color": "#07152e",
-  "orientation": "portrait",
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ]
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#07152e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- CONFIGURACIÓN DE LA APP -->
+<link rel="manifest" href="manifest.json">
+
+<!-- ÍCONO -->
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<title>Misión Buenas Nuevas FM 105.5</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #1c4f82 0%,
+            transparent 45%
+        ),
+        linear-gradient(
+            160deg,
+            #07152e,
+            #123b68,
+            #07152e
+        );
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px 12px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.logo {
+    width: 145px;
+    height: 145px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    margin-bottom: 12px;
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,0.25);
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.frequency {
+    font-size: 20px;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.player-box {
+
+    background:
+        rgba(255,255,255,0.11);
+
+    border-radius: 25px;
+
+    padding: 23px 12px;
+
+    box-shadow:
+        0 12px 40px rgba(0,0,0,0.38);
+
+    backdrop-filter: blur(10px);
+}
+
+.live {
+
+    font-size: 20px;
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.live-dot {
+
+    color: #ff3030;
+
+    font-size: 17px;
+
+    margin-right: 6px;
+}
+
+.station-name {
+
+    background:
+        rgba(0,0,0,0.22);
+
+    border-radius: 14px;
+
+    padding: 13px 10px;
+
+    margin-bottom: 15px;
+}
+
+.station-name strong {
+
+    display: block;
+
+    font-size: 19px;
+}
+
+.station-name small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    opacity: 0.85;
+}
+
+.radio-player {
+
+    width: 100%;
+
+    min-height: 100px;
+}
+
+/* BOTONES */
+
+.buttons {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.button {
+
+    display: block;
+
+    text-decoration: none;
+
+    color: white;
+
+    padding: 16px 12px;
+
+    border-radius: 14px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.22);
+
+    transition: transform 0.2s;
+}
+
+.button:active {
+
+    transform: scale(0.97);
+}
+
+.phone {
+
+    background:
+        linear-gradient(
+            90deg,
+            #168a45,
+            #20b85d
+        );
+}
+
+.whatsapp {
+
+    background:
+        linear-gradient(
+            90deg,
+            #159447,
+            #25d366
+        );
+}
+
+.facebook {
+
+    background:
+        linear-gradient(
+            90deg,
+            #1877f2,
+            #4267b2
+        );
+}
+
+.description {
+
+    margin-top: 25px;
+
+    line-height: 1.6;
+
+    font-size: 15px;
+
+    opacity: 0.95;
+
+    background:
+        rgba(0,0,0,0.15);
+
+    padding: 18px;
+
+    border-radius: 15px;
+}
+
+.footer {
+
+    margin-top: 25px;
+
+    font-size: 14px;
+
+    opacity: 0.75;
+}
+
+/* CELULARES */
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding:
+            18px 9px;
+    }
+
+    .container {
+
+        max-width: 100%;
+    }
+
+    .logo {
+
+        width: 125px;
+
+        height: 125px;
+    }
+
+    h1 {
+
+        font-size: 27px;
+    }
+
+    .frequency {
+
+        font-size: 19px;
+
+        margin-bottom: 20px;
+    }
+
+    .player-box {
+
+        padding:
+            20px 7px;
+
+        border-radius: 22px;
+    }
+
+    .live {
+
+        font-size: 18px;
+    }
+
+    .station-name strong {
+
+        font-size: 17px;
+    }
+
+    .button {
+
+        font-size: 16px;
+
+        padding:
+            15px 10px;
+    }
+
+    .description {
+
+        font-size: 14px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGO DE LA RADIO -->
+
+    <img
+        class="logo"
+        src="logo%20radio%20correcto.png"
+        alt="Radio Misión Buenas Nuevas FM 105.5"
+    >
+
+    <h1>
+        Misión Buenas Nuevas
+    </h1>
+
+    <div class="frequency">
+        📻 105.5 FM
+    </div>
+
+
+    <!-- REPRODUCTOR -->
+
+    <div class="player-box">
+
+        <div class="live">
+
+            <span class="live-dot">
+                🔴
+            </span>
+
+            RADIO EN VIVO
+
+        </div>
+
+
+        <div class="station-name">
+
+            <strong>
+                📻 Misión Buenas Nuevas FM 105.5
+            </strong>
+
+            <small>
+                Montevideo, Uruguay · Radio Cristiana
+            </small>
+
+        </div>
+
+
+        <!-- REPRODUCTOR OFICIAL CASTER.FM -->
+
+        <div
+            class="cstrEmbed radio-player"
+
+            data-type="newStreamPlayer"
+
+            data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
+
+            data-theme="light"
+
+            data-color="6C2BDD"
+
+            data-channelId=""
+
+            data-rendered="false"
+        >
+
+            <a href="https://www.caster.fm">
+                Shoutcast Hosting
+            </a>
+
+            <a href="https://www.caster.fm">
+                Stream Hosting
+            </a>
+
+            <a href="https://www.caster.fm">
+                Radio Server Hosting
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTONES -->
+
+    <div class="buttons">
+
+
+        <!-- LLAMAR -->
+
+        <a
+            class="button phone"
+            href="tel:+59891914830"
+        >
+
+            📞 Llamar: 091 914 830
+
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            class="button whatsapp"
+
+            href="https://wa.me/59891914830"
+
+            target="_blank"
+
+            rel="noopener"
+        >
+
+            💬 WhatsApp
+
+        </a>
+
+
+        <!-- FACEBOOK -->
+
+        <a
+            class="button facebook"
+
+            href="https://www.facebook.com/share/14k15WaUNVn/"
+
+            target="_blank"
+
+            rel="noopener"
+        >
+
+            👍 Facebook · Iglesia de Uruguay
+
+        </a>
+
+
+    </div>
+
+
+    <!-- DESCRIPCIÓN -->
+
+    <div class="description">
+
+        <strong>
+            Radio Misión Buenas Nuevas FM 105.5
+        </strong>
+
+        es una emisora cristiana comprometida
+        con llevar el mensaje del Evangelio de
+        Jesucristo a cada hogar.
+
+        <br><br>
+
+        Desde Montevideo, Uruguay, transmitimos
+        una programación centrada en la esperanza,
+        la fe y la gracia de Dios, con enseñanza
+        bíblica, música cristiana, testimonios
+        y espacios de reflexión para toda la familia.
+
+    </div>
+
+
+    <div class="footer">
+
+        Misión Buenas Nuevas 105.5 FM
+
+    </div>
+
+</div>
+
+
+<!-- REPRODUCTOR CASTER.FM -->
+
+<script src="https://cdn.cloud.caster.fm//widgets/embed.js"></script>
+
+</body>
+</html>
