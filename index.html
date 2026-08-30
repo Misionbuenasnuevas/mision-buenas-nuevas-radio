@@ -9,6 +9,24 @@
 
 <meta name="theme-color" content="#07152e">
 
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-touch-icon" href="icon-192.png">
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="icon-192.png">
+
+<link rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="icon-512.png">
+
 <title>Misión Buenas Nuevas FM 105.5</title>
 
 <style>
@@ -33,48 +51,42 @@ body {
 
     color: white;
 
-    padding: 20px 10px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 20px 10px 35px;
 }
 
 .container {
     width: 100%;
     max-width: 650px;
-    margin: auto;
     text-align: center;
 }
-
-/* LOGO */
 
 .logo {
     width: 145px;
     height: 145px;
-
     object-fit: contain;
-
     border-radius: 50%;
-
     margin-bottom: 12px;
 
     box-shadow:
         0 0 25px rgba(255,255,255,0.25);
 }
 
-/* TITULO */
-
 h1 {
     font-size: 32px;
-    margin-bottom: 8px;
+    line-height: 1.2;
+    margin-bottom: 7px;
 }
 
 .frequency {
     font-size: 21px;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 }
 
-/* RADIO */
-
 .player-box {
-
     width: 100%;
 
     background:
@@ -86,55 +98,34 @@ h1 {
 
     box-shadow:
         0 10px 35px rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .live {
-
     font-size: 21px;
-
     font-weight: bold;
-
     margin-bottom: 18px;
 }
 
-/* CASTER PLAYER */
-
-.cstrEmbed {
-
+.radio-player {
     width: 100%;
-
-    min-height: 100px;
+    min-height: 110px;
 }
-
-/* NO OCULTAR NI MODIFICAR
-   LOS ENLACES DE CASTER */
-
-.cstrEmbed a {
-
-    color: inherit;
-}
-
-/* BOTONES */
 
 .buttons {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 12px;
-
     margin-top: 20px;
 }
 
 .button {
-
     display: block;
-
     width: 100%;
 
     color: white;
-
     text-decoration: none;
 
     padding: 17px 12px;
@@ -142,23 +133,13 @@ h1 {
     border-radius: 15px;
 
     font-size: 17px;
-
     font-weight: bold;
 
     box-shadow:
         0 5px 15px rgba(0,0,0,0.20);
-
-    transition: 0.2s;
 }
-
-.button:active {
-    transform: scale(0.98);
-}
-
-/* TELEFONO */
 
 .phone {
-
     background:
         linear-gradient(
             90deg,
@@ -167,10 +148,7 @@ h1 {
         );
 }
 
-/* WHATSAPP */
-
 .whatsapp {
-
     background:
         linear-gradient(
             90deg,
@@ -179,10 +157,7 @@ h1 {
         );
 }
 
-/* FACEBOOK */
-
 .facebook {
-
     background:
         linear-gradient(
             90deg,
@@ -191,10 +166,7 @@ h1 {
         );
 }
 
-/* INSTAGRAM */
-
 .instagram {
-
     background:
         linear-gradient(
             90deg,
@@ -204,10 +176,7 @@ h1 {
         );
 }
 
-/* DESCRIPCION */
-
 .description {
-
     margin-top: 25px;
 
     padding: 18px;
@@ -222,18 +191,11 @@ h1 {
     font-size: 15px;
 }
 
-/* PIE */
-
 .footer {
-
     margin-top: 25px;
-
     font-size: 14px;
-
     opacity: 0.75;
 }
-
-/* CELULAR */
 
 @media (max-width: 500px) {
 
@@ -258,8 +220,13 @@ h1 {
         padding: 20px 7px;
     }
 
+    .live {
+        font-size: 20px;
+    }
+
     .button {
         font-size: 16px;
+        padding: 16px 10px;
     }
 }
 
@@ -267,131 +234,104 @@ h1 {
 
 </head>
 
-
 <body>
 
-
 <div class="container">
-
-
-<!-- LOGO -->
 
 <img
     class="logo"
     src="logo%20radio%20correcto.png"
-    alt="Misión Buenas Nuevas FM 105.5"
+    alt="Radio Misión Buenas Nuevas FM 105.5"
 >
-
-
-<!-- TITULO -->
 
 <h1>
     Misión Buenas Nuevas
 </h1>
-
 
 <div class="frequency">
     📻 105.5 FM
 </div>
 
 
-<!-- RADIO -->
+<!-- ========================= -->
+<!-- RADIO CASTER.FM -->
+<!-- ========================= -->
 
 <div class="player-box">
 
+    <div class="live">
+        🔴 RADIO EN VIVO
+    </div>
 
-<div class="live">
-    🔴 RADIO EN VIVO
-</div>
+    <div
+        class="cstrEmbed radio-player"
+        data-type="newStreamPlayer"
+        data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
+        data-theme="light"
+        data-color="6C2BDD"
+        data-channelId=""
+        data-rendered="false"
+    >
 
+        <a href="https://www.caster.fm">
+            Shoutcast Hosting
+        </a>
 
-<!-- =====================================
-     CASTER.FM - FORMATO OFICIAL
-====================================== -->
+        <a href="https://www.caster.fm">
+            Stream Hosting
+        </a>
 
-<div
-    data-type="streamPlayer"
-    data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
-    data-theme="light"
-    data-color="e81e4d"
-    data-channelId="a25eb8e1-783e-4564-b805-414ae7c0259d"
-    data-rendered="false"
-    class="cstrEmbed"
->
+        <a href="https://www.caster.fm">
+            Radio Server Hosting
+        </a>
 
-    <a href="https://www.caster.fm">
-        Shoutcast Hosting
-    </a>
-
-    <a href="https://www.caster.fm">
-        Stream Hosting
-    </a>
-
-    <a href="https://www.caster.fm">
-        Radio Server Hosting
-    </a>
+    </div>
 
 </div>
 
 
-</div>
-
-
+<!-- ========================= -->
 <!-- BOTONES -->
+<!-- ========================= -->
 
 <div class="buttons">
 
+    <a
+        class="button phone"
+        href="tel:+59891914830"
+    >
+        📞 Llamar: 091 914 830
+    </a>
 
-<!-- LLAMAR -->
+    <a
+        class="button whatsapp"
+        href="https://wa.me/59891914830"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        💬 WhatsApp
+    </a>
 
-<a
-    class="button phone"
-    href="tel:+59891914830"
->
-    📞 Llamar: 091 914 830
-</a>
+    <a
+        class="button facebook"
+        href="https://www.facebook.com/share/14k15WaUNVn/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        👍 Facebook · Iglesia de Uruguay
+    </a>
 
-
-<!-- WHATSAPP -->
-
-<a
-    class="button whatsapp"
-    href="https://wa.me/59891914830"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    💬 WhatsApp
-</a>
-
-
-<!-- FACEBOOK -->
-
-<a
-    class="button facebook"
-    href="https://www.facebook.com/share/14k15WaUNVn/"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    👍 Facebook · Iglesia de Uruguay
-</a>
-
-
-<!-- INSTAGRAM -->
-
-<a
-    class="button instagram"
-    href="https://www.instagram.com/imbn_uy?igsi=MTJsdmg3dnp0a3hjMg=="
-    target="_blank"
-    rel="noopener noreferrer"
->
-    📸 Instagram · Iglesia de Uruguay
-</a>
-
+    <a
+        class="button instagram"
+        href="https://www.instagram.com/imbn_uy?igsh=MTJsdmg3dnp0a3hjMg=="
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        📸 Instagram · Iglesia de Uruguay
+    </a>
 
 </div>
 
-
-<!-- DESCRIPCION -->
 
 <div class="description">
 
@@ -415,21 +355,17 @@ y espacios de reflexión para toda la familia.
 
 
 <div class="footer">
-    Misión Buenas Nuevas 105.5 FM
+Misión Buenas Nuevas 105.5 FM
+</div>
+
 </div>
 
 
-</div>
+<!-- ========================= -->
+<!-- SCRIPT CASTER.FM -->
+<!-- ========================= -->
 
-
-<!-- =====================================
-     SCRIPT OFICIAL CASTER.FM
-====================================== -->
-
-<script
-    src="https://cdn.cloud.caster.fm/widgets/embed.js">
-</script>
-
+<script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
 
 </body>
 
