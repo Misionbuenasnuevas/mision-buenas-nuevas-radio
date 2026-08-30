@@ -63,7 +63,7 @@
         .player-box {
             background: rgba(255,255,255,0.12);
             border-radius: 25px;
-            padding: 22px 10px;
+            padding: 22px 15px;
             box-shadow: 0 10px 35px rgba(0,0,0,0.35);
             backdrop-filter: blur(8px);
         }
@@ -76,14 +76,26 @@
 
         .radio-player {
             width: 100%;
-            min-height: 105px;
+            min-height: 130px;
+        }
+
+        /* 👇 Enlaces de Caster.fm — OBLIGATORIOS, no borrar ni ocultar */
+        .caster-credits {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+        .caster-credits a {
+            color: white;
+            text-decoration: underline;
+            margin: 0 6px;
         }
 
         .buttons {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .button {
@@ -152,7 +164,7 @@
                 font-size: 19px;
             }
             .player-box {
-                padding: 20px 7px;
+                padding: 20px 10px;
             }
             .button {
                 font-size: 16px;
@@ -169,6 +181,8 @@
 
         <div class="player-box">
             <div class="live">🔴 RADIO EN VIVO</div>
+            
+            <!-- REPRODUCTOR CASTER.FM -->
             <div class="cstrEmbed radio-player"
                  data-type="newStreamPlayer"
                  data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
@@ -176,9 +190,15 @@
                  data-color="e81e4d"
                  data-channelId="a25eb8e1-783e-4564-b805-414ae7c0259d"
                  data-rendered="false">
+                <!-- ⚠️ NO BORRAR NI CAMBIAR ESTOS ENLACES — Son obligatorios para que funcione el reproductor -->
                 <a href="https://www.caster.fm" target="_blank" rel="noopener noreferrer">Shoutcast Hosting</a>
                 <a href="https://www.caster.fm" target="_blank" rel="noopener noreferrer">Stream Hosting</a>
                 <a href="https://www.caster.fm" target="_blank" rel="noopener noreferrer">Radio Server Hosting</a>
+            </div>
+            
+            <!-- Enlaces de atribución visibles para cumplir con Caster.fm -->
+            <div class="caster-credits">
+                Powered by <a href="https://www.caster.fm" target="_blank">Caster.fm</a> — Radio Streaming Hosting
             </div>
         </div>
 
