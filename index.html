@@ -13,13 +13,20 @@
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<meta name="apple-touch-icon" href="icon-192.png">
-
 <link rel="manifest" href="manifest.json">
 
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="icon-192.png">
 
-<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="icon-512.png">
+
+<link rel="apple-touch-icon"
+      href="icon-192.png">
 
 <title>Misión Buenas Nuevas FM 105.5</title>
 
@@ -33,9 +40,7 @@
 }
 
 body {
-
-    font-family: Arial, sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
 
     background:
@@ -49,31 +54,26 @@ body {
     color: white;
 
     display: flex;
-
     justify-content: center;
+    align-items: flex-start;
 
-    align-items: center;
-
-    padding: 20px 10px;
+    padding: 20px 10px 35px;
 }
 
 .container {
-
     width: 100%;
-
     max-width: 650px;
-
     text-align: center;
 }
 
+
+/* LOGO */
+
 .logo {
-
     width: 145px;
-
     height: 145px;
 
     object-fit: contain;
-
     border-radius: 50%;
 
     margin-bottom: 12px;
@@ -82,21 +82,25 @@ body {
         0 0 25px rgba(255,255,255,0.25);
 }
 
+
+/* TITULO */
+
 h1 {
-
     font-size: 32px;
-
-    margin-bottom: 6px;
+    line-height: 1.2;
+    margin-bottom: 7px;
 }
 
 .frequency {
-
-    font-size: 20px;
-
-    margin-bottom: 22px;
+    font-size: 21px;
+    margin-bottom: 24px;
 }
 
+
+/* RADIO */
+
 .player-box {
+    width: 100%;
 
     background:
         rgba(255,255,255,0.12);
@@ -109,28 +113,26 @@ h1 {
         0 10px 35px rgba(0,0,0,0.35);
 
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .live {
-
-    font-size: 20px;
-
+    font-size: 21px;
     font-weight: bold;
-
     margin-bottom: 18px;
 }
 
 .radio-player {
-
     width: 100%;
-
-    min-height: 105px;
+    min-height: 110px;
+    display: block;
 }
 
+
+/* BOTONES */
+
 .buttons {
-
     display: flex;
-
     flex-direction: column;
 
     gap: 12px;
@@ -139,39 +141,38 @@ h1 {
 }
 
 .button {
-
     display: block;
 
-    text-decoration: none;
+    width: 100%;
 
     color: white;
+    text-decoration: none;
 
-    padding: 16px 12px;
+    padding: 17px 12px;
 
-    border-radius: 14px;
+    border-radius: 15px;
 
     font-size: 17px;
-
     font-weight: bold;
 
     box-shadow:
         0 5px 15px rgba(0,0,0,0.20);
 
-    transition: 0.2s;
+    transition: transform 0.15s ease;
 }
 
 .button:hover {
-
     transform: scale(1.02);
 }
 
 .button:active {
-
     transform: scale(0.98);
 }
 
-.phone {
 
+/* TELEFONO */
+
+.phone {
     background:
         linear-gradient(
             90deg,
@@ -180,8 +181,10 @@ h1 {
         );
 }
 
-.whatsapp {
 
+/* WHATSAPP */
+
+.whatsapp {
     background:
         linear-gradient(
             90deg,
@@ -190,8 +193,10 @@ h1 {
         );
 }
 
-.facebook {
 
+/* FACEBOOK */
+
+.facebook {
     background:
         linear-gradient(
             90deg,
@@ -200,8 +205,10 @@ h1 {
         );
 }
 
-.instagram {
 
+/* INSTAGRAM */
+
+.instagram {
     background:
         linear-gradient(
             90deg,
@@ -211,8 +218,10 @@ h1 {
         );
 }
 
-.description {
 
+/* DESCRIPCION */
+
+.description {
     margin-top: 25px;
 
     padding: 18px;
@@ -227,8 +236,10 @@ h1 {
     font-size: 15px;
 }
 
-.footer {
 
+/* PIE */
+
+.footer {
     margin-top: 25px;
 
     font-size: 14px;
@@ -236,42 +247,40 @@ h1 {
     opacity: 0.75;
 }
 
+
+/* CELULARES */
+
 @media (max-width: 500px) {
 
     body {
-
-        padding:
-            15px 8px;
+        padding: 15px 8px 30px;
     }
 
     .logo {
-
         width: 125px;
-
         height: 125px;
     }
 
     h1 {
-
         font-size: 27px;
     }
 
     .frequency {
-
         font-size: 19px;
     }
 
     .player-box {
+        padding: 20px 7px;
+    }
 
-        padding:
-            20px 7px;
+    .live {
+        font-size: 20px;
     }
 
     .button {
-
         font-size: 16px;
+        padding: 16px 10px;
     }
-
 }
 
 </style>
@@ -285,12 +294,16 @@ h1 {
 <div class="container">
 
 
+<!-- LOGO -->
+
 <img
     class="logo"
     src="logo%20radio%20correcto.png"
-    alt="Misión Buenas Nuevas FM 105.5"
+    alt="Radio Misión Buenas Nuevas FM 105.5"
 >
 
+
+<!-- TITULO -->
 
 <h1>
     Misión Buenas Nuevas
@@ -298,143 +311,145 @@ h1 {
 
 
 <div class="frequency">
-
-📻 105.5 FM
-
+    📻 105.5 FM
 </div>
 
+
+<!-- RADIO -->
 
 <div class="player-box">
 
 
-<div class="live">
+    <div class="live">
+        🔴 RADIO EN VIVO
+    </div>
 
-🔴 RADIO EN VIVO
+
+    <!-- CASTER.FM -->
+
+    <div
+        class="cstrEmbed radio-player"
+
+        data-type="streamPlayer"
+
+        data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
+
+        data-theme="light"
+
+        data-color="e81e4d"
+
+        data-channelId="a25eb8e1-783e-4564-b805-414ae7c0259d"
+
+        data-rendered="false"
+    >
+
+        <a href="https://www.caster.fm">
+            Shoutcast Hosting
+        </a>
+
+        <a href="https://www.caster.fm">
+            Stream Hosting
+        </a>
+
+        <a href="https://www.caster.fm">
+            Radio Server Hosting
+        </a>
+
+    </div>
+
 
 </div>
 
 
-<div
-    class="cstrEmbed radio-player"
-    data-type="newStreamPlayer"
-    data-publicToken="7365fcb5-3602-42f1-8a16-04b59720175a"
-    data-theme="light"
-    data-color="6C2BDD"
-    data-channelId="a25eb8e1-783e-4564-b805-414ae7c0259d"
-    data-rendered="false"
->
-
-
-<a href="https://www.caster.fm">
-Shoutcast Hosting
-</a>
-
-
-<a href="https://www.caster.fm">
-Stream Hosting
-</a>
-
-
-<a href="https://www.caster.fm">
-Radio Server Hosting
-</a>
-
-
-</div>
-
-
-</div>
-
+<!-- BOTONES -->
 
 <div class="buttons">
 
 
-<a
-    class="button phone"
-    href="tel:+59891914830"
->
+    <!-- LLAMAR -->
 
-📞 Llamar: 091 914 830
-
-</a>
-
-
-<a
-    class="button whatsapp"
-    href="https://wa.me/59891914830"
-    target="_blank"
-    rel="noopener noreferrer"
->
-
-💬 WhatsApp
-
-</a>
+    <a
+        class="button phone"
+        href="tel:+59891914830"
+    >
+        📞 Llamar: 091 914 830
+    </a>
 
 
-<a
-    class="button facebook"
-    href="https://www.facebook.com/share/14k15WaUNVn/"
-    target="_blank"
-    rel="noopener noreferrer"
->
+    <!-- WHATSAPP -->
 
-👍 Facebook · Iglesia de Uruguay
+    <a
+        class="button whatsapp"
+        href="https://wa.me/59891914830"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        💬 WhatsApp
+    </a>
 
-</a>
+
+    <!-- FACEBOOK -->
+
+    <a
+        class="button facebook"
+        href="https://www.facebook.com/share/14k15WaUNVn/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        👍 Facebook · Iglesia de Uruguay
+    </a>
 
 
-<a
-    class="button instagram"
-    href="https://www.instagram.com/imbn_uy?igsi=MTJsdmg3dnp0a3hjMg=="
-    target="_blank"
-    rel="noopener noreferrer"
->
+    <!-- INSTAGRAM -->
 
-📸 Instagram · Iglesia de Uruguay
-
-</a>
+    <a
+        class="button instagram"
+        href="https://www.instagram.com/imbn_uy?igsh=MTJsdmg3dnp0a3hjMg=="
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        📸 Instagram · Iglesia de Uruguay
+    </a>
 
 
 </div>
 
 
+<!-- DESCRIPCION -->
+
 <div class="description">
 
+    <strong>
+        Radio Misión Buenas Nuevas FM 105.5
+    </strong>
 
-<strong>
-Radio Misión Buenas Nuevas FM 105.5
-</strong>
+    es una emisora cristiana comprometida
+    con llevar el mensaje del Evangelio de
+    Jesucristo a cada hogar.
 
-es una emisora cristiana comprometida
-con llevar el mensaje del Evangelio de
-Jesucristo a cada hogar.
+    <br><br>
 
-
-<br><br>
-
-
-Desde Montevideo, Uruguay, transmitimos
-una programación centrada en la esperanza,
-la fe y la gracia de Dios, con enseñanza
-bíblica, música cristiana, testimonios
-y espacios de reflexión para toda la familia.
-
+    Desde Montevideo, Uruguay, transmitimos
+    una programación centrada en la esperanza,
+    la fe y la gracia de Dios, con enseñanza
+    bíblica, música cristiana, testimonios
+    y espacios de reflexión para toda la familia.
 
 </div>
 
 
 <div class="footer">
-
-Misión Buenas Nuevas 105.5 FM
-
+    Misión Buenas Nuevas 105.5 FM
 </div>
 
 
 </div>
 
+
+<!-- SCRIPT OFICIAL CASTER.FM -->
 
 <script
-    src="https://cdn.cloud.caster.fm//widgets/embed.js">
+    src="https://cdn.cloud.caster.fm/widgets/embed.js">
 </script>
 
 
